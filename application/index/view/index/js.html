@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>页面分享</title>
+<link rel="stylesheet" type="text/css" href="/hui.css" />
+</head>
+<body>
+<div class="hui-wrap">
+    <img src="/122.jpg" width="100%" />
+</div>
+<script type="text/javascript" src="/hui.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript">
+wx.config({
+   debug: true,
+   appId: '{$appid}', // 必填，公众号的唯一标识
+   timestamp: {$jsConfig.timestamp},
+   nonceStr: '{$jsConfig.nonceStr}',
+   signature: '{$jsConfig.signature}',
+    jsApiList: [
+        'chooseImage', 'previewImage', 'uploadImage', 'downloadImage', 
+        'startRecord', 'stopRecord', 'onVoiceRecordEnd', 'playVoice', 
+        'pauseVoice', 'stopVoice', 'onVoicePlayEnd', 'uploadVoice', 
+        'downloadVoice', 'onMenuShareTimeline', 'onMenuShareAppMessage', 
+        'onMenuShareQQ', 'onMenuShareQZone'
+    ]
+});
+<?php
+$title    = 'hcoder 分享测试';
+$shareImg = 'http://wx.hcoder.net/demo/imgs/share.jpg';
+?>
+wx.ready(function(){
+    wx.onMenuShareTimeline({
+        title: '<?php echo $title;?>',
+        link: location.href, // 分享链接
+        imgUrl: '<?php echo $shareImg;?>', // 分享图标
+        success: function(){},
+        cancel: function(){}
+    });
+    wx.onMenuShareAppMessage({
+        title: '<?php echo $title;?>',
+        desc: 'power by hcoder.net',
+        link: location.href,
+        imgUrl: '<?php echo $shareImg;?>', // 分享图标
+        success: function(){},
+        cancel: function(){}
+    });
+});
+</script>
+</body>
+</html>

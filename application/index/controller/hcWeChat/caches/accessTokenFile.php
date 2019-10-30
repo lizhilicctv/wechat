@@ -1,0 +1,1 @@
+<?php return array('access_token' => '26_ZCQ36_aCp3XS7pZnDnVxrCQF8ti0YWR662HE42jVYteih5VqLdWSvCJHPDJnTrGICydTY-DVtLDOwo61SR447q4V-mdaTFv0qnirMah4eQEElj9yNSa_rdEIkTLAPXzne29TCY8cPc66b2OiKVWdAEAYJK', 'expires_date' => 1572399549);?>
